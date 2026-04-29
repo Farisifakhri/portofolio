@@ -1,434 +1,642 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Fakhri Alfarisi - Informatics Student, Hafidz, Level 2 Futsal Referee">
-    <meta name="author" content="Muhammad Fakhri Alfarisi">
-    <title>Fakhri Alfarisi | Portfolio</title>
-    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <title>Muhammad Fakhri Alfarisi — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-indicator"></div>
-
-    <!-- Custom Cursor -->
     <div class="cursor-glow"></div>
-    
-    <!-- Background Blobs -->
+    <div class="cursor-dot"></div>
+    <div class="scroll-indicator"></div>
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="noise-overlay"></div>
+    <canvas id="particle-canvas"></canvas>
 
-    <!-- Navigation -->
+    <!-- NAVBAR -->
     <nav>
-        <div class="container nav-wrapper">
-            <div class="logo">Fakhri<span class="dot">.</span>io</div>
-            <ul class="nav-links">
-                <li><a href="#about">Profile</a></li>
-                <li><a href="#stats">Achievement</a></li>
-                <li><a href="#experience">Career</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">Fakhri<span class="dot">.</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="mailto:mu.fakhrialfarisi@gmail.com" class="nav-cta">Hire Me</a>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
-        
-        <!-- Hero Section dengan Profile Photo -->
-        <header id="about" class="hidden-left">
+    <!-- HERO -->
+    <header id="about">
+        <div class="container">
             <div class="header-grid">
                 <div class="hero-text">
-                    <div class="status-badge">Available for Projects</div>
-                    <h1>Designing Logic,<br> <span class="gradient-text">Officiating Rules.</span></h1>
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span>
+                        Available for opportunities
+                    </div>
+                    <h1>Designing Logic,<br>
+                        <span class="gradient-text typing-text"></span>
+                    </h1>
                     <p class="bio-text">
-                        Hi, I'm <strong>Muhammad Fakhri Alfarisi</strong>.<br>
-                        Informatics Student | Hafidz 20 Juz | Level 2 Futsal Referee.
+                        Informatics Engineering student at UIN Jakarta (GPA 3.6) — building web solutions, officiating futsal at provincial level, and driving measurable impact across organizations. Hafidz 20 Juz &amp; Bronze Medalist in Physics.
                     </p>
-                    
                     <div class="social-buttons">
-                        <a href="https://linkedin.com/in/muhammad-fakhri-alfarisi-319904374/" target="_blank" class="social-btn linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Farisifakhri" target="_blank" class="social-btn github" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://instagram.com/farisi_fakhri26" target="_blank" class="social-btn instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:mu.fakhrialfarisi@gmail.com" class="social-btn email" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/muhammad-fakhri-alfarisi-319904374/" class="social-btn linkedin" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/Farisifakhri" class="social-btn github" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://instagram.com/farisifakhri" class="social-btn instagram" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="mailto:mu.fakhrialfarisi@gmail.com" class="social-btn email">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
                     </div>
                 </div>
-
                 <div class="hero-image">
-                    <picture>
-                        <img 
-                            src="profile.jpg"
-                            alt="Muhammad Fakhri Alfarisi - Informatics Student" 
-                            class="profile-pic"
-                            loading="lazy"
-                            width="400"
-                            height="500"
-                        >
-                    </picture>
+                    <div class="profile-ring">
+                        <img src="https://placehold.co/400x500/1e1b4b/8b5cf6?text=Fakhri" alt="Muhammad Fakhri Alfarisi" class="profile-pic">
+                    </div>
                     <div class="profile-badge">
-                        <i class="fas fa-star"></i>
-                        <span>Available</span>
+                        <i class="fas fa-whistle"></i> Provincial Referee
+                    </div>
+                    <div class="floating-card fc-1">
+                        <i class="fas fa-code"></i>
+                        <span>Web Dev</span>
+                    </div>
+                    <div class="floating-card fc-2">
+                        <i class="fas fa-book-quran"></i>
+                        <span>Hafidz 20 Juz</span>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Stats Section -->
-        <section id="stats" class="hidden-bottom">
-            <h2 class="section-title">By The Numbers</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Matches Officiated</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">20</div>
-                    <div class="stat-label">Juz Memorized</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Active Projects</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">3.60</div>
-                    <div class="stat-label">GPA / 4.00</div>
-                </div>
-            </div>
-        </section>
+    <main>
+        <div class="container">
 
-        <!-- Education Section -->
-        <section id="education" class="hidden-right">
-            <h2 class="section-title">Academic Journey</h2>
-            <div class="glass-card">
-                <div class="card-header-edu">
-                    <i class="fas fa-graduation-cap project-icon"></i>
-                    <div>
-                        <h3>UIN Syarif Hidayatullah Jakarta</h3>
-                        <span class="year">2023 — 2027 (Expected)</span>
+            <!-- STATS -->
+            <section id="stats" class="hidden-bottom">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">3.6</div>
+                        <div class="stat-label">GPA — Informatics, UIN Jakarta</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">MSMEs Guided (Halal Certification)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Monthly Visitors (ldksyah.id)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Participants — Prisma Cup 2025</div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <p class="role">Bachelor of Science in Informatics Engineering</p>
+            </section>
+
+            <!-- EDUCATION -->
+            <section id="education" class="hidden-bottom">
+                <h2 class="section-title">Education</h2>
+                <div class="glass-card">
+                    <div class="card-header-edu">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3>Bachelor of Science in Informatics Engineering</h3>
+                            <span class="year">August 2023 — Expected July 2027</span>
+                            <span class="role">UIN Syarif Hidayatullah Jakarta | South Tangerang, Indonesia</span>
+                        </div>
+                    </div>
                     <div class="highlight-box">
-                        <span><strong>GPA: 3.60 / 4.00</strong></span> | 
+                        <strong>Current GPA: 3.6 / 4.0</strong>
                     </div>
-                    <p class="text-muted mt-2"><strong>Relevant Coursework:</strong> Software Engineering, Artificial Intelligence, Computer Networks, Database Systems, Web Development.</p>
-                    <p class="text-muted"><strong>Achievements:</strong>Best Syiar Division Coordinator Award</p>
+                    <div class="edu-courses mt-2">
+                        <span class="course-tag">Software Engineering</span>
+                        <span class="course-tag">Databases</span>
+                        <span class="course-tag">Computer Networks</span>
+                        <span class="course-tag">Web Application Development</span>
+                        <span class="course-tag">Artificial Intelligence</span>
+                        <span class="course-tag">Machine Learning</span>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="section-title">Professional Career</h2>
-            <div class="timeline">
-                <div class="timeline-item hidden-left">
-                    <div class="timeline-dot"></div>
+            <!-- EXPERIENCE -->
+            <section id="experience">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+
+                    <div class="timeline-item hidden-left">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card">
+                            <h3>Licensed Provincial Futsal Referee <span class="level-badge">Level 2</span></h3>
+                            <span class="org">Asprov Banten, Indonesia | February 2026 – Present</span>
+                            <p>Officiate provincial-level matches with strict adherence to FIFA/AFC Laws of the Game. Execute standardized signals with high precision — scored <strong>90/100</strong> in signal movement evaluation. Analyze complex human movements in real-time high-pressure scenarios for split-second decisions. Leverage expertise in human kinetics to assist in development of motion-tracking algorithms for sports analytics.</p>
+                            <div class="experience-metrics">
+                                <span><i class="fas fa-check-circle"></i> Level 2 Banten License</span>
+                                <span><i class="fas fa-check-circle"></i> 90/100 Signal Evaluation</span>
+                                <span><i class="fas fa-check-circle"></i> Provincial Competitions</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item hidden-left">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card">
+                            <h3>Halal Product Process Companion</h3>
+                            <span class="org">Istiqlal Halal Center (under BPJPH) | Jakarta, Indonesia | August 2025 – Present</span>
+                            <p>Guided <strong>20+ MSMEs</strong> through the comprehensive halal certification self-declare process from initial application to certificate issuance. Reviewed and verified all documents ensuring 100% compliance with BPJPH standards. Educated business owners on the Halal Product Assurance System (SJPH) and facilitated communication between owners and the Halal Inspection Agency (LPH). Provided strategic consultation for the upcoming "Halal Mandatory 2026" regulations.</p>
+                            <div class="experience-metrics">
+                                <span><i class="fas fa-check-circle"></i> 20+ MSMEs Guided</span>
+                                <span><i class="fas fa-check-circle"></i> 100% BPJPH Compliance</span>
+                                <span><i class="fas fa-check-circle"></i> Halal Mandatory 2026 Prep</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item hidden-left">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card">
+                            <h3>Administrative Assistant</h3>
+                            <span class="org">Aila Raeez Utama | Tangerang, Indonesia | January 2024 – July 2025</span>
+                            <p>Managed end-to-end data entry for Umrah pilgrims into the Ministry of Religion's official SISKOPATUH system ensuring <strong>100% data accuracy</strong>. Meticulously verified passports, visas, airline tickets, and insurance policies for all pilgrims. Prepared identification cards and served as a key point of contact for documentation inquiries.</p>
+                            <div class="experience-metrics">
+                                <span><i class="fas fa-check-circle"></i> SISKOPATUH System</span>
+                                <span><i class="fas fa-check-circle"></i> 100% Data Accuracy</span>
+                                <span><i class="fas fa-check-circle"></i> Document Verification</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item hidden-left">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card">
+                            <h3>Staff of Skills and Education</h3>
+                            <span class="org">Ma'had al-Jami'ah UIN Syarif Hidayatullah Jakarta | July 2024 – July 2025</span>
+                            <p>Designed and executed soft skill and educational development programs for Ma'had residents. Led and managed teams in organizing various events demonstrating effective leadership and time management. Served as public relations liaison between Ma'had and external parties for collaborative activities.</p>
+                            <div class="experience-metrics">
+                                <span><i class="fas fa-check-circle"></i> Program Design</span>
+                                <span><i class="fas fa-check-circle"></i> Team Leadership</span>
+                                <span><i class="fas fa-check-circle"></i> Public Relations</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <h2 class="section-title">Projects</h2>
+                <div class="grid-layout">
+
+                    <div class="glass-card project-card hidden-bottom">
+                        <div class="card-header">
+                            <div class="project-icon"><i class="fas fa-globe"></i></div>
+                            <div class="badges">
+                                <span class="badge-status">Live</span>
+                                <span class="badge-tech">Laravel</span>
+                            </div>
+                        </div>
+                        <h3>LDK Syahid Portal</h3>
+                        <p>Official university portal for LDK Syahid UIN Jakarta. Led the UI/UX Modernization Project — redesigning the interface and implementing new features. Managing as Superadmin &amp; Web Developer with 10K+ monthly visitors.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-users"></i> 10K+ Monthly Users</span>
+                            <span><i class="fas fa-server"></i> 99.9% Uptime</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://ldksyah.id" class="btn-small live" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Visit Site
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card project-card hidden-bottom">
+                        <div class="card-header">
+                            <div class="project-icon"><i class="fas fa-running"></i></div>
+                            <div class="badges">
+                                <span class="badge-status">Active</span>
+                                <span class="badge-tech">Python</span>
+                            </div>
+                        </div>
+                        <h3>Sports Analytics — Motion Tracking</h3>
+                        <p>Applying human kinetics expertise from provincial futsal refereeing to assist in developing motion-tracking algorithms for sports analytics. Bridges the gap between domain sports knowledge and technology.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-chart-line"></i> Sports Analytics</span>
+                            <span><i class="fas fa-running"></i> Motion Tracking</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Farisifakhri" class="btn-small github" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card project-card hidden-bottom">
+                        <div class="card-header">
+                            <div class="project-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="badges">
+                                <span class="badge-status">Completed</span>
+                                <span class="badge-tech">Event System</span>
+                            </div>
+                        </div>
+                        <h3>Prisma Cup 2025</h3>
+                        <p>Orchestrated a multi-sport tournament (Futsal, Badminton, E-Sports) for local youth as Event Division Coordinator. Managed scheduling, technical meetings, and logistics for 200+ participants.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-users"></i> 200+ Participants</span>
+                            <span><i class="fas fa-calendar-check"></i> Multi-Sport Tournament</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-small demo"><i class="fas fa-info-circle"></i> Details</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card project-card hidden-bottom">
+                        <div class="card-header">
+                            <div class="project-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="badges">
+                                <span class="badge-status">Active</span>
+                                <span class="badge-tech">Program Design</span>
+                            </div>
+                        </div>
+                        <h3>Syahid Carrier — Career Dev Program</h3>
+                        <p>Initiated and supervised "Syahid Carrier", a career development program with CV workshops and talk shows preparing UIN Jakarta students for the professional world.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-chalkboard-teacher"></i> CV Workshops</span>
+                            <span><i class="fas fa-microphone"></i> Talk Shows</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-small demo"><i class="fas fa-info-circle"></i> Details</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card project-card hidden-bottom">
+                        <div class="card-header">
+                            <div class="project-icon"><i class="fas fa-mosque"></i></div>
+                            <div class="badges">
+                                <span class="badge-status">Completed</span>
+                                <span class="badge-tech">Infrastructure</span>
+                            </div>
+                        </div>
+                        <h3>Faculty Musala Renovation Project</h3>
+                        <p>Spearheaded renovation of the new Faculty Musala (1st Floor) as Chairman. Managed planning, logistics, and execution — culminating in the official inauguration. Established the first faculty-level mosque community and authored the constitution (AD/ART).</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-tools"></i> Infrastructure</span>
+                            <span><i class="fas fa-handshake"></i> Stakeholder Management</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-small demo"><i class="fas fa-info-circle"></i> Details</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card project-card hidden-bottom">
+                        <div class="card-header">
+                            <div class="project-icon"><i class="fas fa-code"></i></div>
+                            <div class="badges">
+                                <span class="badge-status">Active</span>
+                                <span class="badge-tech">HTML/CSS/JS</span>
+                            </div>
+                        </div>
+                        <h3>Personal Portfolio</h3>
+                        <p>This portfolio — built from scratch with glassmorphism design, custom dual cursor, particle trail, 3D tilt cards, scroll animations, and typing effects for a modern developer experience.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-paint-brush"></i> Glassmorphism UI</span>
+                            <span><i class="fas fa-magic"></i> Custom Animations</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Farisifakhri" class="btn-small github" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- LEADERSHIP -->
+            <section id="leadership">
+                <h2 class="section-title">Leadership &amp; Organizations</h2>
+
+                <!-- LDK Syahid -->
+                <div class="org-block hidden-bottom">
+                    <div class="org-header">
+                        <div class="org-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div>
+                            <h3>UKM LDK Syahid</h3>
+                            <span class="org-sub">UIN Syarif Hidayatullah Jakarta</span>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item hidden-left">
+                            <div class="timeline-dot"></div>
+                            <div class="glass-card">
+                                <h3>Administrative Member — Bureau of Secretariat (Kestari)</h3>
+                                <span class="org">February 2026 – Present</span>
+                                <p>Supervise and standardize administrative workflows, official documentation, and archiving systems for all faculty-level branches across the university. Serving as <strong>Superadmin &amp; Web Developer</strong> for the university portal (ldksyah.id). Leading the <strong>UI/UX Modernization Project</strong> — redesigning the interface and implementing new features to enhance digital information accessibility.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item hidden-left">
+                            <div class="timeline-dot"></div>
+                            <div class="glass-card">
+                                <h3>Head of Syiar and Keilmuan Division</h3>
+                                <span class="org">January 2025 – December 2025</span>
+                                <p>Led a team of <strong>8 members</strong> in designing, planning, and executing all division programs. Served as main PIC for <em>Syahid Fair 2025</em> — the largest festival at the Faculty of Science and Technology with <strong>100+ participants</strong>. Led the Website Redevelopment Project (flowchart to implementation). Initiated "Syahid Carrier" career dev program and managed "Mind &amp; Ink" and "Diskei" intellectual programs. Served as moderator for scientific and Islamic discussion forums.</p>
+                                <div class="experience-metrics">
+                                    <span><i class="fas fa-check-circle"></i> 8-Member Team Lead</span>
+                                    <span><i class="fas fa-check-circle"></i> Syahid Fair 2025 PIC</span>
+                                    <span><i class="fas fa-check-circle"></i> Website Redevelopment Lead</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item hidden-left">
+                            <div class="timeline-dot"></div>
+                            <div class="glass-card">
+                                <h3>Division Secretary — HRD Division</h3>
+                                <span class="org">January 2024 – December 2024</span>
+                                <p>Managed all administrative and documentation tasks for the HRD Division. Maintained and updated a database of <strong>40 faculty-level Islamic organizations (LDKS FST)</strong>. Authored the comprehensive year-end accountability report (LPJ) archiving all activities and achievements.</p>
+                                <div class="experience-metrics">
+                                    <span><i class="fas fa-check-circle"></i> 40-Org Database Maintained</span>
+                                    <span><i class="fas fa-check-circle"></i> LPJ Report Author</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HIMTI -->
+                <div class="org-block hidden-bottom">
+                    <div class="org-header">
+                        <div class="org-icon"><i class="fas fa-microchip"></i></div>
+                        <div>
+                            <h3>HIMTI — Himpunan Mahasiswa Teknik Informatika</h3>
+                            <span class="org-sub">UIN Syarif Hidayatullah Jakarta</span>
+                        </div>
+                    </div>
+                    <div class="grid-layout">
+                        <div class="glass-card leader-card hidden-right">
+                            <div class="leader-icon"><i class="fas fa-star"></i></div>
+                            <h3>Head of Department</h3>
+                            <span class="org">June 2025 – Present</span>
+                            <p>Directing a department focused on students' religious proficiency and soft skills through 5 major programs: <strong>DTQ, ROTI, I-TALK, Dev-Up, RAR</strong>. Successfully mapped Quranic reading proficiency of <strong>96%</strong> of target students (KPI: 80%). Achieved <strong>1,200 avg views/content</strong> on ROTI (target: 150). Spearheaded creation of a comprehensive Arabic syllabus for the RAR program. Led the Dev-Up character-building program ensuring 100% readiness before execution.</p>
+                        </div>
+                        <div class="glass-card leader-card hidden-right">
+                            <div class="leader-icon"><i class="fas fa-users"></i></div>
+                            <h3>Member — Social Community Division</h3>
+                            <span class="org">March 2024 – June 2025</span>
+                            <p>Participated in all phases of division social programs from planning to post-event evaluation. Contributed to "HIMTI Peduli" and "MELATI" — community outreach programs for improving educational quality and social welfare assistance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prisma Al-Makmur -->
+                <div class="org-block hidden-bottom">
+                    <div class="org-header">
+                        <div class="org-icon"><i class="fas fa-sitemap"></i></div>
+                        <div>
+                            <h3>Prisma Al-Makmur</h3>
+                            <span class="org-sub">Community Organization</span>
+                        </div>
+                    </div>
+                    <div class="grid-layout">
+                        <div class="glass-card leader-card hidden-right">
+                            <div class="leader-icon"><i class="fas fa-pen-nib"></i></div>
+                            <h3>Secretary General</h3>
+                            <span class="org">January 2024 – Present</span>
+                            <p>Manage all administrative and operational activities for an organization with <strong>40 active members</strong>. Digitized the archiving system achieving an <strong>80% improvement</strong> in document retrieval efficiency. Designed and implemented new SOPs for the secretariat. Coordinated Prisma Cup 2025 as Event Division Coordinator — multi-sport tournament with 200+ participants.</p>
+                        </div>
+                        <div class="glass-card leader-card hidden-right">
+                            <div class="leader-icon"><i class="fas fa-handshake"></i></div>
+                            <h3>Member — Human Resources Development</h3>
+                            <span class="org">January 2021 – December 2024</span>
+                            <p>Actively participated in new member recruitment, successfully onboarding <strong>15 new members</strong> from 2022–2024. Assisted in designing and executing <strong>3 soft skills development training programs</strong> for all members.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Komunitas Musala FST -->
+                <div class="org-block hidden-bottom">
+                    <div class="org-header">
+                        <div class="org-icon"><i class="fas fa-mosque"></i></div>
+                        <div>
+                            <h3>Komunitas Musala FST</h3>
+                            <span class="org-sub">Faculty of Science and Technology Mosque Community | UIN Jakarta</span>
+                        </div>
+                    </div>
+                    <div class="glass-card leader-card hidden-right">
+                        <div class="leader-icon"><i class="fas fa-crown"></i></div>
+                        <h3>Chairman &amp; Founder</h3>
+                        <span class="org">August 2025 – Present</span>
+                        <p><strong>Established the first faculty-level mosque community</strong>, authoring the constitution (AD/ART) and standardizing the Al-Quran reading test for new students. Spearheaded the renovation of the new Faculty Musala (1st Floor) — managing planning, logistics, and execution. Successfully coordinated the official inauguration in liaison with faculty leadership.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- TECH SKILLS -->
+            <section id="skills" class="hidden-bottom">
+                <h2 class="section-title">Skills</h2>
+                <div class="grid-layout">
                     <div class="glass-card">
-                        <h3>Futsal Referee (Level 2)</h3>
-                        <span class="org">AAFI Tangerang 1 & 4 | 2025 - Present</span>
-                        <p><strong>Responsibilities:</strong> Officiating 50+ U-10 to U-16 league matches. Enforcing Laws of the Game (LOTG) with 98% compliance rate. Managing match integrity across 800+ participants. Resolving conflicts between teams and coaching staff.</p>
-                        <div class="experience-metrics">
-                            <span><i class="fas fa-check-circle"></i> 50+ Matches Officiated</span>
-                            <span><i class="fas fa-check-circle"></i> 98% Compliance Rate</span>
+                        <h4 class="skill-section-title"><i class="fas fa-terminal"></i> Technical Skills</h4>
+                        <div class="skill-group">
+                            <h4>Programming Languages</h4>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>Java</span>
+                                <span>SQL</span>
+                                <span>C++</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Web Development</h4>
+                            <div class="tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Laravel</span>
+                                <span>PHP</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Database &amp; Tools</h4>
+                            <div class="tags">
+                                <span>MySQL</span>
+                                <span>Database Management</span>
+                                <span>Microsoft Office Suite</span>
+                                <span>SLiMS</span>
+                                <span>SISKOPATUH</span>
+                                <span>Git</span>
+                                <span>GitHub</span>
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Embedded &amp; Research</h4>
+                            <div class="tags">
+                                <span>ESP32 Microcontroller</span>
+                                <span>IoT Basics</span>
+                                <span>Systematic Literature Review</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item hidden-right">
-                    <div class="timeline-dot"></div>
                     <div class="glass-card">
-                        <h3>Halal Product Companion</h3>
-                        <span class="org">Istiqlal Halal Center (BPJPH) | 2025 - Present</span>
-                        <p><strong>Responsibilities:</strong> Guided 20+ MSMEs (Food, Cosmetics, Supplements) through self-declare halal certification process. Ensuring 100% compliance with BPJPH standards. Document verification and process optimization.</p>
-                        <div class="experience-metrics">
-                            <span><i class="fas fa-check-circle"></i> 20+ MSMEs Guided</span>
-                            <span><i class="fas fa-check-circle"></i> 100% Certification Success</span>
-                            <span><i class="fas fa-check-circle"></i> 3 Industry Sectors</span>
+                        <h4 class="skill-section-title"><i class="fas fa-briefcase"></i> Professional Skills</h4>
+                        <div class="skill-group">
+                            <h4>Administrative</h4>
+                            <div class="tags">
+                                <span>Data Management &amp; Entry</span>
+                                <span>Document Verification</span>
+                                <span>Regulatory Compliance</span>
+                                <span>Administrative Support</span>
+                                <span>Scheduling</span>
+                                <span>Client Relations</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Leadership &amp; Management</h4>
+                            <div class="tags">
+                                <span>Project Management</span>
+                                <span>Event Management</span>
+                                <span>Team Leadership</span>
+                                <span>Public Speaking</span>
+                                <span>Strategic Communication</span>
+                                <span>Problem-Solving</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Languages</h4>
+                            <div class="tags">
+                                <span>Indonesian — Native</span>
+                                <span>English — Professional</span>
+                                <span>Turkish — Elementary</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="timeline-item hidden-left">
-                    <div class="timeline-dot"></div>
+            </section>
+
+            <!-- CERTIFICATIONS & HONORS -->
+            <section id="certifications" class="hidden-bottom">
+                <h2 class="section-title">Certifications &amp; Honors</h2>
+                <div class="grid-layout">
                     <div class="glass-card">
-                        <h3>Administrative Assistant</h3>
-                        <span class="org">Aila Raeez Utama | 2024 - 2025</span>
-                        <p><strong>Responsibilities:</strong> Managed SISKOPATUH database for 500+ Umrah pilgrims. Document verification and data entry accuracy. Processing pilgrim registrations with 99.8% accuracy rate.</p>
-                        <div class="experience-metrics">
-                            <span><i class="fas fa-check-circle"></i> 500+ Pilgrim Records</span>
-                            <span><i class="fas fa-check-circle"></i> 99.8% Accuracy</span>
-                            <span><i class="fas fa-check-circle"></i> SISKOPATUH Certified</span>
+                        <h3 style="margin-bottom:1.5rem">Certifications</h3>
+                        <ul class="check-list">
+                            <li>Futsal Referee Level 2 Licensed</li>
+                            <li>Red Hat System Administration I (RH124-RHA) — Ver. 9.3</li>
+                            <li>Red Hat System Administration II (RH134-RHA)</li>
+                            <li>CCNA: Introduction to Networks</li>
+                            <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+                            <li>SQL Completed Class Certification</li>
+                            <li>Data Visualization Course</li>
+                            <li>Computer Hardware Basic Course</li>
+                            <li>Oracle Java Fundamental Course</li>
+                            <li>Data Science Course Certified</li>
+                            <li>Python Language Programming Basic Certified</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3 style="margin-bottom:1.5rem">Honors &amp; Awards</h3>
+                        <div class="honor-badge">
+                            <i class="fas fa-quran"></i>
+                            <div>
+                                <strong>Hafidz 20 Juz</strong>
+                                <small>Memorizer of 20 Chapters of the Holy Qur'an</small>
+                            </div>
+                        </div>
+                        <div class="honor-badge">
+                            <i class="fas fa-medal"></i>
+                            <div>
+                                <strong>Bronze Medalist — Physics (Pra-KSM)</strong>
+                                <small>Pre-Madrasah Science Competition, Banten Province Level (2022)</small>
+                            </div>
+                        </div>
+                        <div class="honor-badge">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>2nd Honorable Mention — Integrated Physics (KSM)</strong>
+                                <small>Madrasah Science Competition, Tangerang City Level</small>
+                            </div>
+                        </div>
+                        <div class="honor-badge">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>3rd Honorable Mention — Integrated Physics (KSM)</strong>
+                                <small>Madrasah Science Competition, Tangerang City Level</small>
+                            </div>
+                        </div>
+                        <div class="honor-badge">
+                            <i class="fas fa-microphone"></i>
+                            <div>
+                                <strong>Invited Quran Reciter — International Seminar</strong>
+                                <small>Maxy Academy — Performed Tilawah at the opening ceremony</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Leadership Section -->
-        <section id="leadership" class="hidden-bottom">
-            <h2 class="section-title">Leadership & Impact</h2>
-            <div class="grid-layout">
-                
-                <div class="glass-card leader-card" style="border-color: var(--primary);">
-                    <div class="leader-icon"><i class="fas fa-star"></i></div>
-                    <h3>Best Division Coordinator</h3>
-                    <span class="org">LDK Syahid FST (2025)</span>
-                    <p>Awarded <strong>"Best Syiar Division Coordinator"</strong>. Coordinated 12 Islamic seminars reaching 500+ students. Increased engagement by 65% YoY through strategic social media campaigns.</p>
+            <!-- HOBBIES -->
+            <section id="hobbies" class="hidden-bottom">
+                <h2 class="section-title">Beyond the Code</h2>
+                <div class="hobby-wrapper">
+                    <div class="hobby-item"><i class="fas fa-plane"></i><span>Aviation &amp; Airline Manager</span></div>
+                    <div class="hobby-item"><i class="fas fa-train"></i><span>Railway Enthusiast</span></div>
+                    <div class="hobby-item"><i class="fas fa-futbol"></i><span>Galatasaray Fan</span></div>
+                    <div class="hobby-item"><i class="fas fa-film"></i><span>Cinephile (Letterboxd)</span></div>
+                    <div class="hobby-item"><i class="fas fa-book-open"></i><span>Tere Liye Reader</span></div>
+                    <div class="hobby-item"><i class="fas fa-tv"></i><span>Anime (MyAnimeList)</span></div>
+                    <div class="hobby-item"><i class="fas fa-quran"></i><span>Qur'an Memorization</span></div>
+                    <div class="hobby-item"><i class="fas fa-atom"></i><span>Physics Enthusiast</span></div>
                 </div>
+            </section>
 
-                <div class="glass-card leader-card">
-                    <div class="leader-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Webmaster & Secretariat</h3>
-                    <span class="org">LDK Syahid UIN Jakarta (Sub Admin)</span>
-                    <p>Managing official website (ldksyah.id) and handling central administration duties. Developed website features and maintained system infrastructure. Maintained 99.9% website uptime across 10,000+ monthly visitors.</p>
-                </div>
+        </div>
+    </main>
 
-                <div class="glass-card leader-card">
-                    <div class="leader-icon"><i class="fas fa-users-cog"></i></div>
-                    <h3>Head of PKPI Dept.</h3>
-                    <span class="org">HIMTI UIN Jakarta</span>
-                    <p>Lead Personal & Islamic Skills Development. Collaborated with Qatar Airways & Kompasiana. Organized 8 professional development workshops for 300+ students.</p>
-                </div>
-
-                <div class="glass-card leader-card">
-                    <div class="leader-icon"><i class="fas fa-mosque"></i></div>
-                    <h3>Secretary General</h3>
-                    <span class="org">PRISMA Al-Ma'mur</span>
-                    <p>Managing organizational administration. Leading youth mosque activities. Coordinated 15 community engagement programs annually.</p>
-                </div>
-                
-                <div class="glass-card leader-card">
-                    <div class="leader-icon"><i class="fas fa-kaaba"></i></div>
-                    <h3>Chairman</h3>
-                    <span class="org">KOMUS FST UIN</span>
-                    <p>Leading Faculty Musala Community. Overseeing facility renovations ($5K budget managed). Operational management for 200+ regular users.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="hidden-bottom">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="grid-layout">
-                
-                <div class="glass-card project-card">
-                    <div class="card-header">
-                        <i class="fas fa-robot project-icon"></i>
-                        <div class="badges">
-                            <span class="badge-tech">Python</span>
-                            <span class="badge-tech">YOLOv8</span>
-                            <span class="badge-status">Completed</span>
-                        </div>
-                    </div>
-                    <h3>AI Futsal Referee Analysis</h3>
-                    <p>Computer Vision system detecting referee signals in real-time for match analysis.</p>
-                    <div class="project-meta">
-                        <span><strong>Accuracy:</strong> 94.2%</span>
-                        <span><strong>FPS:</strong> 30fps Real-time</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-small github"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="btn-small demo"><i class="fas fa-play"></i> Demo</a>
-                    </div>
-                </div>
-
-                <div class="glass-card project-card">
-                    <div class="card-header">
-                        <i class="fas fa-globe project-icon"></i>
-                        <div class="badges">
-                            <span class="badge-tech">Full Stack</span>
-                            <span class="badge-tech">WordPress</span>
-                            <span class="badge-private">Active</span>
-                        </div>
-                    </div>
-                    <h3>LDK Syahid Official Web</h3>
-                    <p>Development Team Member. Contributed to system architecture and digital flow optimization for campus da'wah organization. Collaborated with team on feature implementation and maintenance.</p>
-                    <div class="project-meta">
-                        <span><strong>Traffic:</strong> 10K+ Monthly</span>
-                        <span><strong>Uptime:</strong> 99.9%</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://ldksyah.id" target="_blank" class="btn-small live"><i class="fas fa-external-link-alt"></i> Visit</a>
-                    </div>
-                </div>
-
-                <div class="glass-card project-card">
-                    <div class="card-header">
-                        <i class="fas fa-fire project-icon"></i>
-                        <div class="badges">
-                            <span class="badge-tech">JavaScript</span>
-                            <span class="badge-tech">Supabase</span>
-                        </div>
-                    </div>
-                    <h3>Pawai Obor Scoring App</h3>
-                    <p>Real-time scoring application for torch relay event. Auto-calculated metrics for 800 data points.</p>
-                    <div class="project-meta">
-                        <span><strong>Data Points:</strong> 800+</span>
-                        <span><strong>Users:</strong> 50+ Concurrent</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-small github"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-
-                <div class="glass-card project-card">
-                    <div class="card-header">
-                        <i class="fas fa-train project-icon"></i>
-                        <div class="badges">
-                            <span class="badge-tech">Simulation</span>
-                            <span class="badge-tech">JavaScript</span>
-                        </div>
-                    </div>
-                    <h3>Gapeka Master 2025</h3>
-                    <p>Train travel chart simulation & signaling logic visualization for Indonesian railway system study.</p>
-                    <div class="project-meta">
-                        <span><strong>Routes Simulated:</strong> 20+</span>
-                        <span><strong>Interactive Elements:</strong> Advanced</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-small github"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-
-                <div class="glass-card project-card">
-                    <div class="card-header">
-                        <i class="fas fa-book project-icon"></i>
-                        <div class="badges">
-                            <span class="badge-tech">PHP</span>
-                            <span class="badge-tech">SLiMS</span>
-                        </div>
-                    </div>
-                    <h3>SLiMS Customization</h3>
-                    <p>Library Management System feature development and plugin customization for institutional libraries.</p>
-                    <div class="project-meta">
-                        <span><strong>Features:</strong> 5 Custom</span>
-                        <span><strong>Clients:</strong> 2 Libraries</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-small github"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-
-                <div class="glass-card project-card">
-                    <div class="card-header">
-                        <i class="fab fa-telegram project-icon"></i>
-                        <div class="badges">
-                            <span class="badge-tech">Python</span>
-                            <span class="badge-tech">Bot API</span>
-                        </div>
-                    </div>
-                    <h3>Mahad Info Bot</h3>
-                    <p>Automated Telegram bot for student information management and announcement distribution.</p>
-                    <div class="project-meta">
-                        <span><strong>Users:</strong> 200+</span>
-                        <span><strong>Uptime:</strong> 99.5%</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-small github"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-
-                <div class="glass-card project-card">
-                    <div class="card-header">
-                        <i class="fas fa-mosque project-icon"></i>
-                        <div class="badges">
-                            <span class="badge-tech">Full Stack</span>
-                            <span class="badge-tech">React</span>
-                            <span class="badge-tech">Firebase</span>
-                            <span class="badge-private">Active</span>
-                        </div>
-                    </div>
-                    <h3>Super App Masjid Prisma Al-Ma'mur</h3>
-                    <p>Integrated platform consolidating all mosque activities and sub-organizations (PRISMA, LTIQ, Baitul Maal, TPA, etc). Centralized management system for events, member registration, donations, and organization coordination.</p>
-                    <div class="project-meta">
-                        <span><strong>Sub-orgs:</strong> 5+ Integrated</span>
-                        <span><strong>Active Users:</strong> 300+</span>
-                        <span><strong>Features:</strong> 15+ Modules</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn-small github"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" class="btn-small demo"><i class="fas fa-play"></i> Demo</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="hidden-bottom">
-            <h2 class="section-title">Expertise & Certifications</h2>
-            <div class="grid-layout">
-                <div class="glass-card tech-card">
-                    <h4><i class="fas fa-code"></i> Tech Stack</h4>
-                    <div class="tags">
-                        <span>Python</span><span>Java</span><span>SQL</span>
-                        <span>C++</span><span>JavaScript</span><span>PHP</span>
-                        <span>Flask</span><span>React</span><span>PostgreSQL</span>
-                        <span>WordPress</span><span>Supabase</span><span>Git</span>
-                    </div>
-                </div>
-                <div class="glass-card cert-card">
-                    <h4><i class="fas fa-certificate"></i> Certifications</h4>
-                    <ul class="check-list">
-                        <li>Red Hat System Admin I & II</li>
-                        <li>CCNA: Switching & Routing</li>
-                        <li>Oracle Java Fundamental</li>
-                        <li>PSSI 2 Futsal Referee</li>
-                        <li>BPJPH Halal Certification</li>
-                    </ul>
-                </div>
-                <div class="glass-card honor-card">
-                    <h4><i class="fas fa-medal"></i> Honors</h4>
-                    <div class="honor-badge">
-                        <i class="fas fa-quran"></i>
-                        <div><strong>Hafidz 20 Juz</strong><small>Al-Qur'an Memorizer</small></div>
-                    </div>
-                    <div class="honor-badge">
-                        <i class="fas fa-atom"></i>
-                        <div><strong>Bronze Physics</strong><small>Pra-KSM Banten</small></div>
-                    </div>
-                    <div class="honor-badge">
-                        <i class="fas fa-star"></i>
-                        <div><strong>Best Coordinator</strong><small>2025 Award</small></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hobbies Section -->
-        <section id="hobbies" class="hidden-bottom">
-            <h2 class="section-title">Beyond the Code</h2>
-            <div class="hobby-wrapper">
-                <div class="hobby-item"><i class="fas fa-plane-departure"></i><span>Aviation & Trains</span></div>
-                <div class="hobby-item"><i class="fas fa-film"></i><span>Anime Enthusiast</span></div>
-                <div class="hobby-item"><i class="fas fa-futbol"></i><span>Galatasaray Fan</span></div>
-                <div class="hobby-item"><i class="fas fa-book-open"></i><span>Tere Liye Reader</span></div>
-            </div>
-        </section>
-
-        <!-- Footer / Contact Section -->
-        <footer id="contact">
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
+        <div class="container">
             <div class="footer-content">
-                <h3>Let's Collaborate</h3>
-                <p>Open for discussions about Software Engineering, Futsal Officiating, or Halal Certification.</p>
+                <h3>Let's Build Something <span class="gradient-text">Together</span></h3>
+                <p>Open to web development collaborations, tech projects, internships, or a good conversation about futsal, aviation, or anime.</p>
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> Tangerang, Banten 15660</span>
+                    <span><i class="fas fa-phone"></i> (+62) 813-1720-9305</span>
+                    <span><i class="fas fa-envelope"></i> mu.fakhrialfarisi@gmail.com</span>
+                </div>
                 <div class="footer-socials">
-                    <a href="https://instagram.com/farisi_fakhri26" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/in/muhammad-fakhri-alfarisi-319904374/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammad-fakhri-alfarisi-319904374/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/Farisifakhri" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com/farisifakhri" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="mailto:mu.fakhrialfarisi@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2026 <strong>Muhammad Fakhri Alfarisi</strong>. Built with <i class="fas fa-code"></i> & Integrity.</p>
+                    <p>Crafted with <i class="fas fa-heart"></i> by Muhammad Fakhri Alfarisi · 2025</p>
                 </div>
             </div>
-        </footer>
-
-    </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

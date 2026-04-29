@@ -16,6 +16,15 @@
     --blob-2-size: clamp(250px, 40vw, 400px);
 }
 
+/* ===== FONT OVERRIDE ===== */
+body {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+h1, h2, h3, .logo, .section-title, .stat-number {
+    font-family: 'Syne', sans-serif !important;
+}
+
 /* ===== RESET & BASE ===== */
 * {
     margin: 0;
@@ -1012,4 +1021,350 @@ footer {
         margin-top: 3rem;
         padding: 3rem 0 1.5rem;
     }
+}
+/* ===== NOISE OVERLAY ===== */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px;
+}
+
+/* ===== PARTICLE CANVAS ===== */
+#particle-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9997;
+    opacity: 0.6;
+}
+
+/* ===== CURSOR DOT ===== */
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* ===== BLOB 3 ===== */
+.blob-3 {
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    opacity: 0.15;
+    animation: float 15s infinite alternate;
+    filter: blur(100px);
+    position: fixed;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* ===== NAV CTA BUTTON ===== */
+.nav-cta {
+    padding: 0.5rem 1.2rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    transition: 0.3s;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+}
+
+/* ===== PULSE DOT ===== */
+.pulse-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+    50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+/* ===== PROFILE RING ===== */
+.profile-ring {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 24px;
+    background: var(--gradient);
+    z-index: -1;
+    opacity: 0.7;
+    filter: blur(8px);
+    animation: ringGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes ringGlow {
+    from { opacity: 0.4; filter: blur(8px); }
+    to { opacity: 0.9; filter: blur(16px); }
+}
+
+/* ===== FLOATING CARDS ===== */
+.floating-card {
+    position: absolute;
+    background: rgba(20, 20, 40, 0.9);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(20px);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 5;
+}
+
+.floating-card i {
+    color: var(--primary);
+}
+
+.fc-1 {
+    top: 20px;
+    right: -20px;
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+.fc-2 {
+    bottom: 60px;
+    left: -20px;
+    animation: floatCard 4s ease-in-out infinite reverse;
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* ===== LEVEL BADGE ===== */
+.level-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(236, 72, 153, 0.15);
+    border: 1px solid rgba(236, 72, 153, 0.4);
+    color: var(--accent);
+    font-weight: 700;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ===== EDU ICON ===== */
+.edu-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* ===== COURSE TAGS ===== */
+.edu-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.course-tag {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+/* ===== SKILL GROUP ===== */
+.skill-group {
+    margin-bottom: 1.5rem;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.skill-group h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+/* ===== TYPING CURSOR ===== */
+.typing-text {
+    border-right: 3px solid var(--primary);
+    padding-right: 5px;
+}
+
+/* ===== ANIMATED PAGE LOAD ===== */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* ===== STAGGERED HERO ANIMATION ===== */
+.hero-text .status-badge {
+    animation: fadeUp 0.6s ease 0.1s both;
+}
+
+.hero-text h1 {
+    animation: fadeUp 0.7s ease 0.25s both;
+}
+
+.hero-text .bio-text {
+    animation: fadeUp 0.7s ease 0.4s both;
+}
+
+.hero-text .social-buttons {
+    animation: fadeUp 0.7s ease 0.55s both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== GLOW ON HOVER FOR STAT CARDS ===== */
+.stat-card:hover .stat-number {
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+    transform: scale(1.05);
+    display: inline-block;
+    transition: 0.3s;
+}
+
+/* ===== ACTIVE NAV ===== */
+.nav-links a.active {
+    color: var(--primary);
+}
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* ===== ORG BLOCK ===== */
+.org-block {
+    margin-bottom: 3rem;
+}
+
+.org-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 1rem;
+}
+
+.org-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.org-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.org-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    display: block;
+    margin-top: 2px;
+}
+
+/* ===== SKILL SECTION TITLE ===== */
+.skill-section-title {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+/* ===== CONTACT INFO IN FOOTER ===== */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info i {
+    color: var(--primary);
 }
